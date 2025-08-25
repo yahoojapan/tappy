@@ -4,6 +4,10 @@ Thank you for your interest in contributing to Tappy!
 
 This is a small, early-stage project and we haven't established detailed contribution guidelines yet. Please follow standard OSS contribution practices.
 
+## Contributor License Agreement (CLA)
+
+By submitting a pull request to this project, you automatically agree to be bound by the [Yahoo! JAPAN Contributor License Agreement (version 1.0)](https://gist.github.com/yahoojapanoss/9bf8afd6ea67f32d29b4082abf220340).
+
 ## Development
 
 1. Fork and clone the repository
