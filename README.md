@@ -18,9 +18,7 @@ yarn add @lycorp-jp/tappy puppeteer
 pnpm add @lycorp-jp/tappy puppeteer
 ```
 
-> **Note**: Puppeteer is a peer dependency. You need to install it separately.
-
-## Examples
+## Usage
 
 ```typescript
 import { type Device, Tappy } from "@lycorp-jp/tappy";
@@ -45,7 +43,7 @@ const device: Device = {
 const result = await tappy.analyze("https://example.com", device);
 
 console.log(result.elements);
-// This contains information about all analyzed tappable elements
+
 // Example output:
 // [
 //   {
@@ -60,11 +58,4 @@ console.log(result.elements);
 await browser.close();
 ```
 
-Check out the [examples](./examples) directory for other usage:
-
-- [Visualization](./examples/visualization.ts)
-
-## Requirements
-
-- Node.js 20 or higher
-- Puppeteer (currently the only supported browser adapter)
+Check out the [examples](./examples) directory for other usage
