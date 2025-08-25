@@ -29,4 +29,5 @@ jobs:
           node-version: "20.x"
           cache: "pnpm"
       - run: pnpm i --frozen-lockfile
+      - run: pnpm puppeteer browsers install chrome
       - run: pnpm test
