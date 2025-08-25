@@ -68,7 +68,3 @@ Check out the [examples](./examples) directory for other usage:
 
 - Node.js 20 or higher
 - Puppeteer (currently the only supported browser adapter)
-
-## License
-
-This project is licensed under the [Apache License 2.0](LICENSE).
