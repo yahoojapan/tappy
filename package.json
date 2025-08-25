@@ -4,17 +4,49 @@
   "description": "Tappy analyzes the size of buttons, links, and other interactive elements on smartphone web screens and displays tap success rates.",
   "repository": "https://github.com/yahoojapan/tappy.git",
   "license": "Apache-2.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./adapters": {
+      "import": "./dist/adapters/index.js",
+      "types": "./dist/adapters/index.d.ts"
+    },
+    "./utils": {
+      "import": "./dist/utils/index.js",
+      "types": "./dist/utils/index.d.ts"
+    }
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "pnpm clean && tsc",
     "clean": "rimraf dist",
     "lint": "biome check"
   },
+  "dependencies": {
+    "mathjs": "^14.6.0"
+  },
   "devDependencies": {
     "@biomejs/biome": "^2.2.2",
     "@total-typescript/tsconfig": "^1.0.4",
     "@types/node": "^24.3.0",
+    "puppeteer": "^24.17.0",
     "rimraf": "^6.0.1",
     "typescript": "^5.9.2"
+  },
+  "peerDependencies": {
+    "puppeteer": "^24.0.0"
+  },
+  "peerDependenciesMeta": {
+    "puppeteer": {
+      "optional": true
+    }
   },
   "packageManager": "pnpm@9.15.9",
   "engines": {
