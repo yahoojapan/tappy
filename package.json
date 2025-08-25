@@ -1,0 +1,23 @@
+{
+  "name": "@lycorp-jp/tappy",
+  "version": "0.1.0",
+  "description": "Tappy analyzes the size of buttons, links, and other interactive elements on smartphone web screens and displays tap success rates.",
+  "repository": "https://github.com/yahoojapan/tappy.git",
+  "license": "Apache-2.0",
+  "scripts": {
+    "build": "pnpm clean && tsc",
+    "clean": "rimraf dist",
+    "lint": "biome check"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.2",
+    "@total-typescript/tsconfig": "^1.0.4",
+    "@types/node": "^24.3.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.9.2"
+  },
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": ">=20"
+  }
+}

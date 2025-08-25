@@ -1,0 +1,8 @@
+{
+  "[typescript][javascript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.biome": "explicit"
+    }
+  },
+  "editor.defaultFormatter": "biomejs.biome"
+}
