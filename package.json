@@ -27,7 +27,8 @@
   "scripts": {
     "build": "pnpm clean && tsc",
     "clean": "rimraf dist",
-    "lint": "biome check"
+    "lint": "biome check",
+    "test": "vitest run"
   },
   "dependencies": {
     "mathjs": "^14.6.0"
@@ -36,9 +37,12 @@
     "@biomejs/biome": "^2.2.2",
     "@total-typescript/tsconfig": "^1.0.4",
     "@types/node": "^24.3.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
     "puppeteer": "^24.17.0",
     "rimraf": "^6.0.1",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
   },
   "peerDependencies": {
     "puppeteer": "^24.0.0"
