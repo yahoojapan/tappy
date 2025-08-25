@@ -59,3 +59,7 @@ await browser.close();
 ```
 
 Check out the [examples](./examples) directory for other usage
+
+## Contributing
+
+Please see [CONTRIBUTING](./CONTRIBUTING.md) for details on how to get started.
