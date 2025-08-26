@@ -2,6 +2,7 @@
   <img width="828" src="./logo/tappy-logo-horizontal.png" alt="Tappy" />
 </div>
 
+
 ---
 
 [![npm version](https://badgen.net/npm/v/@lycorp-jp/tappy)](https://www.npmjs.com/package/@lycorp-jp/tappy)
