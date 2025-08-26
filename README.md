@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="828" src="./logo.png" alt="Tappy" />
+  <img width="828" src="./logo/tappy-logo-horizontal.png" alt="Tappy" />
 </div>
 
 ---
