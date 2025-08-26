@@ -63,3 +63,7 @@ Check out the [examples](./examples) directory for other usage
 ## Contributing
 
 Please see [CONTRIBUTING](./CONTRIBUTING.md) for details on how to get started.
+
+## Project status
+
+This package is in early development stage. The API may change significantly between releases without prior notice. Please use with caution in production environments.
