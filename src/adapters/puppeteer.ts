@@ -1,11 +1,16 @@
 import fs from "node:fs";
 import libpath from "node:path";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import type { Page } from "puppeteer";
 import {
   DEFAULT_ACCEPTED_EVENT_NAMES,
   DEFAULT_ACCEPTED_TAG_NAMES,
 } from "../constants.js";
 import type { Adapter, Device, TappableElement } from "../types.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export class PuppeteerAdapter implements Adapter {
   private page: Page;
@@ -69,7 +74,7 @@ export class PuppeteerAdapter implements Adapter {
     );
 
     const detector = fs
-      .readFileSync(libpath.join(process.cwd(), "src/browser/detector.js"), {
+      .readFileSync(libpath.join(__dirname, "../browser/detector.js"), {
         encoding: "utf-8",
       })
       .replace('"{{arg0}}"', JSON.stringify(DEFAULT_ACCEPTED_TAG_NAMES))
