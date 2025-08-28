@@ -69,3 +69,17 @@ Please see [CONTRIBUTING](./CONTRIBUTING.md) for details on how to get started.
 ## Project status
 
 This package is in early development stage. The API may change significantly between releases without prior notice. Please use with caution in production environments.
+
+## Citation
+
+```bibtex
+@misc{usuba2024tappy,
+      title={Tappy: Predicting Tap Accuracy of User-Interface Elements by Reverse-Engineering Webpage Structures},
+      author={Hiroki Usuba and Junichi Sato and Naomi Sasaya and Shota Yamanaka and Fumiya Yamashita},
+      year={2024},
+      eprint={2403.03097},
+      archivePrefix={arXiv},
+      primaryClass={cs.HC},
+      url={https://arxiv.org/abs/2403.03097},
+}
+```
