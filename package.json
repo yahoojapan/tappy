@@ -1,7 +1,7 @@
 {
   "name": "@lycorp-jp/tappy",
   "version": "0.1.2",
-  "description": "Tappy analyzes the size of buttons, links, and other interactive elements on smartphone web screens and displays tap success rates.",
+  "description": "Analyze the sizes of buttons, links, and other elements on web pages, and output the tap success rate.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yahoojapan/tappy.git"

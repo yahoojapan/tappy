@@ -8,7 +8,7 @@
 [![npm version](https://badgen.net/npm/v/@lycorp-jp/tappy)](https://www.npmjs.com/package/@lycorp-jp/tappy)
 [![Github Action](https://github.com/yahoojapan/tappy/actions/workflows/ci.yml/badge.svg)](https://github.com/yahoojapan/tappy/actions/workflows/ci.yml)
 
-Tappy analyzes the size of buttons, links, and other interactive elements on smartphone web screens and displays tap success rates.
+Analyze the sizes of buttons, links, and other elements on web pages, and output the tap success rate.
 
 ## Installation
 
