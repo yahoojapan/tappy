@@ -23,7 +23,7 @@ export class PuppeteerAdapter implements Adapter {
     await this.page.setViewport({
       width: device.width,
       height: device.height,
-      deviceScaleFactor: device.scale,
+      deviceScaleFactor: device.scaleFactor,
     });
     await this.page.goto(url);
     await this.page.evaluate(async () => {

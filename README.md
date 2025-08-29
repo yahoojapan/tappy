@@ -38,7 +38,7 @@ const device: Device = {
   name: "iPhone 12 Pro",
   width: 390,
   height: 844,
-  scale: 3,
+  scaleFactor: 3,
   ppi: 460,
 };
 

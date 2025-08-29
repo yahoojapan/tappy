@@ -17,8 +17,8 @@ export class Tappy {
     const html = await this.adapter.getHtml();
 
     const resultElements = elements.map((element) => {
-      const mmWidth = pixelToMm(element.width, device.ppi, device.scale);
-      const mmHeight = pixelToMm(element.height, device.ppi, device.scale);
+      const mmWidth = pixelToMm(element.width, device.ppi, device.scaleFactor);
+      const mmHeight = pixelToMm(element.height, device.ppi, device.scaleFactor);
       const sigmaX = Math.sqrt(0.0091 * mmWidth ** 2 + 1.0949);
       const sigmaY = Math.sqrt(0.0149 * mmHeight ** 2 + 0.9414);
       const tapSuccessRate =

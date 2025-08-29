@@ -9,7 +9,7 @@ describe("Tappy", () => {
       name: "MockDevice",
       width: 800,
       height: 600,
-      scale: 2,
+      scaleFactor: 2,
       ppi: 96,
     };
 
@@ -63,7 +63,7 @@ describe("Tappy", () => {
       name: "MockDevice",
       width: 800,
       height: 600,
-      scale: 2,
+      scaleFactor: 2,
       ppi: 96,
     };
 

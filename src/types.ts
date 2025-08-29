@@ -25,7 +25,7 @@ export type Device = {
   /**
    * The scale factor of the device.
    */
-  scale: number;
+  scaleFactor: number;
 };
 
 /**
