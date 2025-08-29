@@ -83,7 +83,11 @@ export interface Adapter {
  */
 export type AnalyzeResult = {
   device: Device;
-  elements: (TappableElement & { tapSuccessRate: number })[];
+  elements: (TappableElement & {
+    widthMm: number;
+    heightMm: number;
+    tapSuccessRate: number;
+  })[];
   screenshot: string;
   html: string;
 };

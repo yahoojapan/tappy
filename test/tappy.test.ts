@@ -46,6 +46,10 @@ describe("Tappy", () => {
 
     expect(result.elements[0]).toBeDefined();
     expect(result.elements[1]).toBeDefined();
+    expect(result.elements[0]).toHaveProperty("widthMm");
+    expect(result.elements[1]).toHaveProperty("widthMm");
+    expect(result.elements[0]).toHaveProperty("heightMm");
+    expect(result.elements[1]).toHaveProperty("heightMm");
     expect(result.elements[0]).toHaveProperty("tapSuccessRate");
     expect(result.elements[1]).toHaveProperty("tapSuccessRate");
 

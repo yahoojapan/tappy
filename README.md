@@ -53,7 +53,9 @@ console.log(result.elements);
 //     height: 18,             // Element height in CSS pixels
 //     left: 32,               // X position from left edge
 //     top: 200.875,           // Y position from top edge
-//     tapSuccessRate: 0.8497559260608007  // Success rate (0-1, where 1 is 100%)
+//     widthMm: 22.69...,      // Element width in millimeters
+//     heightMm: 2.98...,      // Element height in millimeters
+//     tapSuccessRate: 0.84... // Success rate (0-1, where 1 is 100%)
 //   }
 // ]
 
