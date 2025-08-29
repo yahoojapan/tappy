@@ -1,9 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
-import type { AnalyzeResult, Device } from "../types.js";
+import type { AnalyzeResult } from "../types.js";
 
 export function visualize(
-  device: Device,
   analyzeResult: AnalyzeResult,
   outputPath: string,
 ): string {
@@ -29,7 +28,7 @@ export function visualize(
 </head>
 <body>
   <div class="container">
-    <img src="screenshot.png" style="display:block; width: ${device.width}px;">
+    <img src="screenshot.png" style="display:block; width: ${analyzeResult.device.width}px;">
     ${analyzeResult.elements
       .map(
         (r) => `

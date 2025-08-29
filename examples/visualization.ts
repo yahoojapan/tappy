@@ -19,6 +19,6 @@ const device: Device = {
 
 const result = await tappy.analyze("https://example.com", device);
 
-visualize(device, result, "output");
+visualize(result, "output");
 
 await browser.close();
