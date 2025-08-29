@@ -32,6 +32,7 @@ export class Tappy {
     });
 
     return {
+      device: device,
       elements: resultElements,
       html,
       screenshot,
