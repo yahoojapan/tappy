@@ -53,8 +53,8 @@ describe("PuppeteerAdapter", () => {
     });
   });
 
-  describe("navigate", () => {
-    it("should handle hidden-until-found elements", async () => {
+  describe("adjustPage", () => {
+    it("should remove hidden='until-found' attributes from elements", async () => {
       await loadFixture("hidden-element.html");
 
       const initiallyHidden = await page.evaluate(() => {
@@ -63,14 +63,7 @@ describe("PuppeteerAdapter", () => {
       });
       expect(initiallyHidden).toBe(true);
 
-      await page.evaluate(async () => {
-        const hiddenUntilFound = document.querySelectorAll(
-          '[hidden="until-found"]',
-        );
-        for (const $e of hiddenUntilFound) {
-          $e.removeAttribute("hidden");
-        }
-      });
+      await adapter.adjustPage();
 
       const stillHidden = await page.evaluate(() => {
         const element = document.getElementById("testElement");

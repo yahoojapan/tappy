@@ -50,12 +50,11 @@ export type TappableElement = {
  */
 export interface Adapter {
   /**
-   * Navigate to the specified URL
-   * @param {string} url
-   * @param {Device} device
+   * Adjust the current page for tappable element analysis by performing
+   * necessary DOM manipulations and optimizations.
    * @returns {Promise<void>}
    */
-  navigate: (url: string, device: Device) => Promise<void>;
+  adjustPage: () => Promise<void>;
 
   /**
    * Get a list of tappable elements on the current page

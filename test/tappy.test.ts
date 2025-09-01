@@ -14,32 +14,31 @@ describe("Tappy", () => {
     };
 
     const mockAdapter = {
-      navigate: vitest.fn().mockReturnValue(undefined),
+      adjustPage: vitest.fn().mockResolvedValue(undefined),
       getTappableElements: vitest
         .fn()
-        .mockReturnValue([
+        .mockResolvedValue([
           { left: 10, top: 20, width: 100, height: 50 } as TappableElement,
           { left: 150, top: 20, width: 200, height: 30 } as TappableElement,
         ]),
-      getScreenshot: vitest.fn().mockReturnValue("base64_image_data"),
-      getHtml: vitest.fn().mockReturnValue("<html><body>Test</body></html>"),
+      getScreenshot: vitest.fn().mockResolvedValue("base64_image_data"),
+      getHtml: vitest.fn().mockResolvedValue("<html><body>Test</body></html>"),
     };
 
     const tappy = new Tappy(mockAdapter as unknown as PuppeteerAdapter);
 
-    const result = await tappy.analyze("https://example.com", mockDevice);
+    const result = await tappy.analyze(mockDevice);
 
-    expect(mockAdapter.navigate).toHaveBeenCalledWith(
-      "https://example.com",
-      mockDevice,
-    );
+    expect(mockAdapter.adjustPage).toHaveBeenCalled();
     expect(mockAdapter.getTappableElements).toHaveBeenCalled();
     expect(mockAdapter.getScreenshot).toHaveBeenCalled();
     expect(mockAdapter.getHtml).toHaveBeenCalled();
 
+    expect(result).toHaveProperty("device");
     expect(result).toHaveProperty("elements");
     expect(result).toHaveProperty("html");
     expect(result).toHaveProperty("screenshot");
+    expect(result.device).toBe(mockDevice);
     expect(result.elements).toHaveLength(2);
     expect(result.html).toBe("<html><body>Test</body></html>");
     expect(result.screenshot).toBe("base64_image_data");
@@ -72,9 +71,8 @@ describe("Tappy", () => {
     };
 
     const mockAdapter = {
-      setViewport: vitest.fn().mockReturnValue(undefined),
-      navigate: vitest.fn().mockImplementation(() => {
-        throw new Error("Navigation failed");
+      adjustPage: vitest.fn().mockImplementation(() => {
+        throw new Error("Adjust page failed");
       }),
       getTappableElements: vitest.fn(),
       getScreenshot: vitest.fn(),
@@ -83,8 +81,8 @@ describe("Tappy", () => {
 
     const tappy = new Tappy(mockAdapter as unknown as PuppeteerAdapter);
 
-    await expect(
-      tappy.analyze("https://example.com", mockDevice),
-    ).rejects.toThrow("Navigation failed");
+    await expect(tappy.analyze(mockDevice)).rejects.toThrow(
+      "Adjust page failed",
+    );
   });
 });

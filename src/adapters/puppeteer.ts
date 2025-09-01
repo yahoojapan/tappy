@@ -1,5 +1,4 @@
 import fs from "node:fs";
-import libpath from "node:path";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import type { Page } from "puppeteer";
@@ -7,25 +6,19 @@ import {
   DEFAULT_ACCEPTED_EVENT_NAMES,
   DEFAULT_ACCEPTED_TAG_NAMES,
 } from "../constants.js";
-import type { Adapter, Device, TappableElement } from "../types.js";
+import type { Adapter, TappableElement } from "../types.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export class PuppeteerAdapter implements Adapter {
-  private page: Page;
+  public page: Page;
 
-  constructor(page: Page) {
+  public constructor(page: Page) {
     this.page = page;
   }
 
-  async navigate(url: string, device: Device): Promise<void> {
-    await this.page.setViewport({
-      width: device.width,
-      height: device.height,
-      deviceScaleFactor: device.scaleFactor,
-    });
-    await this.page.goto(url);
+  async adjustPage(): Promise<void> {
     await this.page.evaluate(async () => {
       const hiddenUntilFound = document.querySelectorAll(
         '[hidden="until-found"]',
@@ -74,7 +67,7 @@ export class PuppeteerAdapter implements Adapter {
     );
 
     const detector = fs
-      .readFileSync(libpath.join(__dirname, "../browser/detector.js"), {
+      .readFileSync(path.join(__dirname, "../browser/detector.js"), {
         encoding: "utf-8",
       })
       .replace('"{{arg0}}"', JSON.stringify(DEFAULT_ACCEPTED_TAG_NAMES))

@@ -2,7 +2,6 @@
   <img width="828" src="./logo/tappy-logo-horizontal.png" alt="Tappy" />
 </div>
 
-
 ---
 
 [![npm version](https://badgen.net/npm/v/@lycorp-jp/tappy)](https://www.npmjs.com/package/@lycorp-jp/tappy)
@@ -27,12 +26,6 @@ import { type Device, Tappy } from "@lycorp-jp/tappy";
 import { PuppeteerAdapter } from "@lycorp-jp/tappy/adapters";
 import puppeteer from "puppeteer";
 
-const browser = await puppeteer.launch();
-const page = await browser.newPage();
-
-const adapter = new PuppeteerAdapter(page);
-const tappy = new Tappy(adapter);
-
 // For accurate device specs, refer to: https://www.ios-resolution.com/
 const device: Device = {
   name: "iPhone 12 Pro",
@@ -42,7 +35,20 @@ const device: Device = {
   ppi: 460,
 };
 
-const result = await tappy.analyze("https://example.com", device);
+const browser = await puppeteer.launch();
+const page = await browser.newPage();
+
+const adapter = new PuppeteerAdapter(page);
+await adapter.page.setViewport({
+  width: device.width,
+  height: device.height,
+  deviceScaleFactor: device.scaleFactor,
+  isMobile: true,
+});
+await adapter.page.goto("https://example.com/");
+
+const tappy = new Tappy(adapter);
+const result = await tappy.analyze(device);
 
 console.log(result.elements);
 

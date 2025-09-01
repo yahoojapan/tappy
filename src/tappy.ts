@@ -9,8 +9,8 @@ export class Tappy {
     this.adapter = adapter;
   }
 
-  async analyze(url: string, device: Device): Promise<AnalyzeResult> {
-    await this.adapter.navigate(url, device);
+  async analyze(device: Device): Promise<AnalyzeResult> {
+    await this.adapter.adjustPage();
 
     const elements = await this.adapter.getTappableElements();
     const screenshot = await this.adapter.getScreenshot();
