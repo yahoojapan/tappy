@@ -5,7 +5,7 @@ export type Device = {
   /**
    * The name of the device.
    */
-  name: string;
+  name?: string;
 
   /**
    * The width of the device in pixels.
