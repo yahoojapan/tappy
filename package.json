@@ -1,6 +1,6 @@
 {
   "name": "@lycorp-jp/tappy",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Analyze the sizes of buttons, links, and other elements on web pages, and output the tap success rate.",
   "repository": {
     "type": "git",
